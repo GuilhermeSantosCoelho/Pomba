@@ -71,7 +71,8 @@
 		<style type="text/css">
 
 			#TextoPost{
-				font-size: 25px;
+				font-size: 20px;
+				float: left;
 			}
 
 			#PostadoEm{
@@ -126,23 +127,30 @@
 			#feed{
 				margin-top: 75px;
 				width: 50%;
-				border:2px black solid;
-				border-radius: 5px;
+				border:1px #38444d solid;
+				border-radius: 1px;
 				text-align: center;
 				margin-left: 340px;
 			}
 
 			#seguir_usuario{
 				line-height: 44px;
-				float: left;
-				margin-top: 10px;
-				margin-left: 30px;
-				border: 2px black solid;
-				width: 20%;
-				border-radius: 10px;
-				height: 50px;
+				float: right;
+				margin-right: 30px;
+				border: 1px #1DA1F2 solid;
+				border-radius: 50px;
 				display: inline;
 				cursor: pointer;
+				width: 10%;
+			}
+
+			.seguir{
+				color: #1DA1F2;
+			}
+
+			.seguindo{
+				background-color: #1DA1F2;
+				color: white;
 			}
 
 			#postar{
@@ -157,11 +165,14 @@
 			#post{
 				margin-bottom: 50px;
 				text-align: center;
+				border-bottom: 1px solid #38444d;
+				max-width: 100%;
+				overflow-x: auto;
+				padding: 20px 0px 20px 20px;
 			}
 
 			#post .user{
 				float: left;
-				margin-left: 60px;
 				color: green;
 			}
 
@@ -173,18 +184,18 @@
 
 			hr{
 				width: 90%;
+				color: #38444d;
 			}
 
 			textarea{
 				width: 60%;
-				border-radius: 10px;
-				height: 70px;
+				border-radius: 5px;
+				height: 30px;
 				border-color: #828282;
-				box-shadow: 1px 1px 1px black;
 				font-family: Verdana;
 				font-size: 20px;
-				color: black;
-				text-shadow: 1px 1px 2px #104E8B;
+				font-color: #8899a6;
+				float: left;
 			}
 
 			#lixeira{
@@ -195,26 +206,26 @@
 			}
 
 			#comentar_btn{
-				margin-top: 20px;
-				border:2px black solid;
 				width: 10%;
-				border-radius: 5px;
+				border-radius: 20px;
+				border: 1px #1DA1F2 solid;
+				display: inline-block;
 				cursor: pointer;
-				margin-left: 300px;
+				float: 0px auto;
 				height: 30px;
 				line-height: 28px;
+				background-color: #1DA1F2;
+				color: white;
 			}
 
 			#coment{
 				float: left;
-				margin-left: 50px;
-				display: block;
 			}
 
 			#div_coment{
 				float: left;
-				font-size: 20px;
-				margin-left: 80px;
+				padding-top: 20px;
+				font-size: 16px;
 			}
 
 			#user{
@@ -295,6 +306,10 @@
 				margin-right: 30px;
 				color: #1874CD;
 				text-shadow: 1px 1px 1px black;
+			}
+			body{
+				background-color: #15202b;
+				color: white;
 			}
 
 		</style>
