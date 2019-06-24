@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="Imagens/pomba.ico" >
+	<title>POMBA - Login</title>
+	<style type="text/css">
+
+		#login{
+			margin: 0px auto;
+			background-color: white;
+			width: 45%;
+			height: 380px;
+			margin-top: 60px;
+			border:1px #cecece solid;
+		}
+
+		body{
+			background: #e6ecf0;
+		}
+
+		#iusuario{
+			width: 40%;
+			height: 30px;
+			border: 1px rgb(230, 236, 240) solid;
+			border-radius: 2px;
+			color: black;
+			font-size: 15px;
+			padding-left: 5px;
+		}
+		#isenha{
+			width: 40%;
+			height: 30px;
+			border: 0.5px rgb(230, 236, 240) solid;
+			border-radius: 2px;
+			color: black;
+			font-size: 15px;
+			padding-left: 5px;
+		}
+		#ibotao{
+			background-color: #1da1f2;
+			color:white;
+			border-radius: 25px;
+			width: 80px;
+			height: 35px;
+			font-size: 15px;
+			font-weight: bold;
+			border: 0;
+		}
+
+		a{
+			color: #1c94e0;
+			text-decoration: none;
+		}
+
+		#elementos-login{
+			margin-top: 5%;
+			margin-left: 15%;
+		}
+
+		#titulo{
+			font-family: "Segoe UI",Arial,sans-serif;
+		}
+
+		#footer{
+			background-color: #f5f8fa;
+			width: 85%;
+			height: 80px;
+			padding-left: 15%;
+			padding-top: 30px;
+		}
+
+		#mensagem{
+			position: relative;
+			width: 600px;
+			padding: 30px;
+			margin: 0px auto;
+			box-shadow: rgba(0,0,0,0.25);
+			background:white;
+			border-radius: 0 0 6px 6px;
+			color: #66757f;
+			font-size: 14px;
+			display: none;
+			word-wrap: break-word;
+		}
+
+		#header{
+			height: 47px;
+			background:white;
+			width: 100%;
+			border-bottom: 1px solid rgba(0,0,0,0.2);
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 1000;
+		}
+
+
+	</style>
+
+	<script type="text/javascript">
+
+		function login(){
+			var user = document.getElementById('iusuario');
+			var senha = document.getElementById('isenha');
+
+			var ajax = new XMLHttpRequest();
+			ajax.open("POST", "login.php", true);
+			// Seta tipo de requisição e URL com os parâmetros
+			ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			// Seta paramêtros da requisição e envia a requisição
+			ajax.send("usuario="+user+"&senha="+senha);
+
+			// Cria um evento para receber o retorno.
+			ajax.onreadystatechange = function() {
+				if (ajax.readyState == 4 && ajax.status == 200) {
+					var data = ajax.responseText;
+					if(data == true){
+
+					}else{
+						document.getElementById("mensagem-text").innerHTML = (data);
+						document.getElementById("mensagem").style.display = "block";
+					}
+					console.log(data);
+				}
+			}
+		}
+	</script>
+
+</head>
+<body>
+
+	<div id="header"></div>
+
+	<div id="mensagem">
+		<p id="mensagem-text"></p>
+	</div>
+
+	<div id="login">
+		<div id="elementos-login">
+			<h2 id="titulo">Entrar no Pomba</h2>
+			<form method="post">
+				<input id="iusuario" name="usuario" placeholder="Usuário" type="text"><br><br>
+				<input id="isenha" name="senha" placeholder="Senha" type="password"><br><br>
+
+				<button onclick="login()" id="ibotao">Entrar</button><br/><br/>
+			</form>
+		</div>
+		<br>
+		<div id="footer">
+			<p id="p1">Novo no Pomba? <a href="cadastro.php">Inscreva-se agora »</a></p>
+		</div>
+	</div>
+
+</body>
+</html>
